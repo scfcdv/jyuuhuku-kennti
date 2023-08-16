@@ -1,0 +1,32 @@
+<head>
+<link rel="icon" href="https://homeweb2-rmir.vercel.app/favicon.ico">
+<title>文字重複検知</title>
+</head>
+<body>
+<label for="inputString"></label>
+<input type="text" id="inputString">
+<button onclick="checkDuplicates()">重複チェック</button>
+<p id="result"></p>
+<p id="duplicates"></p>
+<script>
+function checkDuplicates() {
+const inputElement = document.getElementById("inputString");
+const inputString = inputElement.value;
+const resultElement = document.getElementById("result");
+const duplicatesElement = document.getElementById("duplicates");     
+const charMap = {};
+const duplicateChars = [];
+for (let char of inputString) {
+if (charMap[char]) {
+if (!duplicateChars.includes(char)) {
+duplicateChars.push(char);}
+} else {
+charMap[char] = true;}}
+if (duplicateChars.length > 0) {
+resultElement.textContent = "重複した文字があります。";
+duplicatesElement.textContent = "重複している文字: " + duplicateChars.join(", ");
+} else {
+resultElement.textContent = "重複した文字はありません。";
+duplicatesElement.textContent = "";}}
+</script>
+</body>
