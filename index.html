@@ -24,7 +24,7 @@ duplicateChars.push(char);}
 charMap[char] = true;}}
 if (duplicateChars.length > 0) {
 resultElement.textContent = "重複した文字があります。";
-duplicatesElement.textContent = "重複している文字: " + duplicateChars.join(", ");
+duplicatesElement.textContent = "重複している文字: " + duplicateChars.join("");
 } else {
 resultElement.textContent = "重複した文字はありません。";
 duplicatesElement.textContent = "";}}
